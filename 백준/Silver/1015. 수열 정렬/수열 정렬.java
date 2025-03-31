@@ -13,33 +13,26 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         N = Integer.parseInt(br.readLine());
-        Arr[] arr = new Arr[N];
+        Arr[] B = new Arr[N];
+        int[] P = new int[N];
 
         // 1. Index와 함께 저장
         StringTokenizer st = new StringTokenizer(br.readLine());
         for(int i = 0 ; i < N ; i++){
-            arr[i] = new Arr();
+            B[i] = new Arr();
 
-            arr[i].value = Integer.parseInt(st.nextToken());
-            arr[i].index = i;
+            B[i].value = Integer.parseInt(st.nextToken());
+            B[i].index = i;
         }
 
-        // 2. A 배열의 값으로 정렬
-        Arrays.sort(arr);
-        
-        // 2. A 배열의 값을 P의 배열의 값으로 변경
+        Arrays.sort(B);
+
         for(int i = 0 ; i < N ; i++){
-            arr[i].value = arr[i].index;
-            arr[i].index = i;
+            P[B[i].index] = i;
         }
 
-        // 3. Index 값으로 정렬
-        Arrays.sort(arr);
-
-
-        // 4. P 배열 출력
         for(int i = 0 ; i < N ; i++){
-            bw.write(arr[i].index + " ");
+            bw.write(P[i] + " ");
         }
 
         bw.flush();
