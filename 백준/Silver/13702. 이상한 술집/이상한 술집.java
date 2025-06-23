@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 
 public class Main {
     static int N, K;
-    static long[] kettles;
+    static int[] kettles;
     public static void main(String[] args) throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,9 +19,9 @@ public class Main {
         N = Integer.parseInt(st.nextToken());
         K = Integer.parseInt(st.nextToken());
 
-        kettles = new long[N];
+        kettles = new int[N];
         for(int i = 0 ; i < N ; i++){
-            kettles[i] = Long.parseLong(br.readLine());
+            kettles[i] = Integer.parseInt(br.readLine());
         }
 
         Arrays.sort(kettles);
